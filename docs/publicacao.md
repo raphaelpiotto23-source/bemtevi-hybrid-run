@@ -57,9 +57,22 @@ Duas rodadas limpas em sequência deram 90/99 e 87/98. Notas de celular oscilam 
 - [ ] GPX oficial: quando o DTS homologar, substituir `public/route/10k.gpx` e `5k.gpx` e tirar o selo "Percurso em homologação" (`route.status` no JSON)
 - [ ] Link curto do Google Maps do Bem Te Vi em `venue.mapsUrl` (hoje é uma busca pelo endereço)
 
-## Como hospedar
+## Onde está publicado
 
-Vercel ou Netlify, projeto Astro detectado automaticamente (`npm run build`, saída `dist/`). Ou qualquer hospedagem estática: subir o conteúdo de `dist/`. Domínio próprio depois, no painel.
+- Repositório: https://github.com/raphaelpiotto23-source/bemtevi-hybrid-run (branch `main`)
+- Site: https://raphaelpiotto23-source.github.io/bemtevi-hybrid-run/
+- Deploy: GitHub Actions (`.github/workflows/deploy.yml`) a cada push na `main`. Fonte do Pages: GitHub Actions.
+- Variável do repositório `BASE_PATH=/bemtevi-hybrid-run` (Settings → Secrets and variables → Actions → Variables): o script `_fonte/apply_base.mjs` reescreve os caminhos absolutos do `dist/` para o subcaminho do Pages.
+
+### Quando o domínio chegar
+
+1. Settings → Pages → Custom domain: digitar o domínio e salvar (o GitHub cria o arquivo `CNAME` na raiz do repositório; se não criar, colocar `public/CNAME` com o domínio).
+2. No registrador: `A` para 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 e `CNAME www` → `raphaelpiotto23-source.github.io`.
+3. Apagar a variável `BASE_PATH` (ou deixar vazia) e rodar o workflow de novo.
+4. Colocar o domínio em `siteUrl` do `event.json` e em `site` do `astro.config.mjs`; trocar `DOMINIO` em `robots.txt` e `sitemap.xml`.
+5. Marcar "Enforce HTTPS" no Pages.
+
+Fluxo de edição: mexer em `src/`, `npm run build` para conferir local, `git commit`, `git push`. O Actions publica em 1 a 2 minutos.
 
 ## Decisões: pedido original · o que foi feito · por quê
 
