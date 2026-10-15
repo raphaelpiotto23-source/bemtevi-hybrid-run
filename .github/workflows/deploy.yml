@@ -25,10 +25,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      # Sem domínio próprio o site vive em /<repo>/. Com domínio (CNAME em public/), BASE_PATH fica vazio.
+      # O site da corrida vive em thehybriderun.com.br/bemtevi/; a raiz redireciona para lá.
       - run: node _fonte/apply_base.mjs
         env:
-          BASE_PATH: ${{ vars.BASE_PATH }}
+          BASE_PATH: /bemtevi
+      - run: node _fonte/subdir.mjs
+        env:
+          SUBDIR: bemtevi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
