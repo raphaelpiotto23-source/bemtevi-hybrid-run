@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
-// site: TODO (domínio a definir). Quando existir, colocar aqui e no event.json (siteUrl).
 export default defineConfig({
+  site: 'https://thehybriderun.com.br',
   vite: { plugins: [tailwindcss()] },
   build: { inlineStylesheets: 'always' },
   compressHTML: true,

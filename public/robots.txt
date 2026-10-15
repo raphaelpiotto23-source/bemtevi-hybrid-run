@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-
-# TODO: trocar DOMINIO pelo domínio final
-Sitemap: https://DOMINIO/sitemap.xml
+Sitemap: https://thehybriderun.com.br/sitemap.xml
