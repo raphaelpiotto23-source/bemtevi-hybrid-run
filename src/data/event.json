@@ -1,0 +1,506 @@
+{
+  "name": "Bem Te Vi Hybrid Run",
+  "edition": "1ª edição",
+  "circuit": "Etapa de abertura do Circuito Hybrid",
+  "tagline": "A única corrida da região onde a linha de chegada é a mesa.",
+  "support": "Prova comum dispersa em 40 minutos. Aqui o público fica horas no mesmo lugar: o pouso na porta do Bem Te Vi, com café, chopp, música e família. E o domingo não acaba ao meio-dia: à tarde tem festa de confraternização, abrindo a temporada de festas de dezembro.",
+  "signature": "Feita para atletas híbridos: quem treina tendo trabalho e vida, e se constrói no processo, não na chegada.",
+  "hashtag": "",
+  "siteUrl": "TODO",
+  "raceStart": "2026-11-29T07:30:00-03:00",
+  "raceEnd": "2026-11-29T18:00:00-03:00",
+  "venue": {
+    "name": "Bem Te Vi",
+    "address": "Av. Dr. Durval Nicolau, 1705",
+    "city": "São João da Boa Vista",
+    "state": "SP",
+    "lat": -21.972627,
+    "lon": -46.767017,
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Av.+Dr.+Durval+Nicolau,+1705,+S%C3%A3o+Jo%C3%A3o+da+Boa+Vista+-+SP",
+    "mapsUrlTodo": "Trocar pelo link curto do Google Maps do Bem Te Vi quando tiver"
+  },
+  "registrationUrl": "https://www.ticketsports.com.br/e/bemtevi-hybrid-run-88330",
+  "utm": "utm_source=site&utm_medium=cta&utm_campaign=bemtevi",
+  "capacity": 900,
+  "loteOverride": null,
+  "lotes": [
+    {
+      "id": 1,
+      "label": "1º lote",
+      "until": "2026-10-18T23:59:59-03:00",
+      "prices": {
+        "10k": 159,
+        "5k": 149,
+        "walk": 119
+      },
+      "note": "até 18/10 ou 120 inscrições"
+    },
+    {
+      "id": 2,
+      "label": "2º lote",
+      "until": "2026-11-08T23:59:59-03:00",
+      "prices": {
+        "10k": 179,
+        "5k": 169,
+        "walk": 129
+      }
+    },
+    {
+      "id": 3,
+      "label": "3º lote",
+      "until": "2026-11-23T23:59:59-03:00",
+      "prices": {
+        "10k": 199,
+        "5k": 189,
+        "walk": 139
+      }
+    },
+    {
+      "id": 4,
+      "label": "Balcão",
+      "from": "2026-11-27T14:00:00-03:00",
+      "until": "2026-11-28T18:00:00-03:00",
+      "prices": {
+        "10k": 209,
+        "5k": 199,
+        "walk": 149
+      },
+      "note": "Sem camiseta, enquanto houver vaga"
+    }
+  ],
+  "feeNote": "Valores + 12% de taxa da plataforma",
+  "discounts": {
+    "senior60": 0.5,
+    "pcd": 0.5
+  },
+  "groups": {
+    "note": "Grupos esportivos: mesmos preços, taxa fixa de R$ 6,50. Caminhada do grupo: R$ 119."
+  },
+  "onlineUntil": "2026-11-23T23:59:59-03:00",
+  "boletoUntil": "2026-11-19T23:59:59-03:00",
+  "shirtSizeUntil": "2026-10-30T23:59:59-03:00",
+  "transferUntil": "2026-10-30T23:59:59-03:00",
+  "couponNote": "Tem cupom de um parceiro? Usa no checkout da Ticket Sports.",
+  "distances": [
+    {
+      "id": "10k",
+      "label": "Corrida 10 km",
+      "short": "10 km",
+      "minAge": 16,
+      "chip": true,
+      "start": "07:30",
+      "gpx": "/route/10k.gpx",
+      "gpxStatus": "eixo do KML de 22/09, homologado em 14/10 pelo Raphael; falta burocracia interna com o DTS",
+      "refGpx": "/route/10k_ref_strava_2026-07-11.gpx",
+      "refNote": "Duas voltas no mesmo circuito"
+    },
+    {
+      "id": "5k",
+      "label": "Corrida 5 km",
+      "short": "5 km",
+      "minAge": 12,
+      "chip": true,
+      "start": "07:30",
+      "gpx": "/route/5k.gpx",
+      "gpxStatus": "traçado enviado ao DTS em 29/09, homologado em 14/10 pelo Raphael; falta burocracia interna"
+    },
+    {
+      "id": "walk",
+      "label": "Caminhada 3 km",
+      "short": "3 km",
+      "minAge": null,
+      "chip": false,
+      "start": "08:30",
+      "gpx": "TODO"
+    }
+  ],
+  "route": {
+    "status": "Percurso homologado",
+    "description": "Sai da Confraria Bem Te Vi, contorna na Brutal, em frente à Drogal, e segue pela avenida até o Lions Clube, no Bedrock, voltando para a chegada na porta da Confraria. O 5 km é uma volta. O 10 km são duas.",
+    "points": [
+      {
+        "id": "btv",
+        "label": "Largada e chegada",
+        "detail": "Confraria Bem Te Vi, nº 1705",
+        "lat": -21.972627,
+        "lon": -46.767017,
+        "dists": [
+          "10k",
+          "5k",
+          "walk"
+        ]
+      },
+      {
+        "id": "bedrock",
+        "label": "Retorno",
+        "detail": "Lions Clube, no Bedrock",
+        "lat": -21.96906,
+        "lon": -46.749814,
+        "dists": [
+          "10k",
+          "5k"
+        ],
+        "coordsNote": "Ponto de partida do reconhecimento de 11/07 (Strava), ~1,8 km a leste do Bem Te Vi, altura do nº 3484 (Lions, segundo o planejamento de julho). Confirmar na vistoria do DTS"
+      },
+      {
+        "id": "brutal",
+        "label": "Contorno",
+        "detail": "Brutal, em frente à Drogal",
+        "lat": -21.973536,
+        "lon": -46.783007,
+        "dists": [
+          "10k",
+          "5k"
+        ],
+        "coordsNote": "Raphael, 14/10: a Brutal fica em frente à Drogal, basicamente no mesmo ponto do retorno do KML de 22/09 (rotatória do Anglo). Coordenada mantida; falta só o número"
+      }
+    ],
+    "landmarks": [
+      {
+        "name": "Spasso Sabores",
+        "km": null
+      },
+      {
+        "name": "Clínica Dr. Vallim",
+        "km": null
+      },
+      {
+        "name": "Inova Imune",
+        "km": null
+      },
+      {
+        "name": "Brahma Express",
+        "km": null
+      },
+      {
+        "name": "Droga Raia",
+        "km": null
+      },
+      {
+        "name": "Posto Jdois",
+        "km": null
+      },
+      {
+        "name": "Rainha Delicatessen",
+        "km": null
+      },
+      {
+        "name": "ZERO%",
+        "km": null
+      },
+      {
+        "name": "Drogal",
+        "km": null
+      },
+      {
+        "name": "Brutal",
+        "km": null
+      },
+      {
+        "name": "Bedrock / Lions Clube",
+        "km": null
+      }
+    ],
+    "landmarksNote": "Sem km: a base mudou em 14/10 (retorno no Bedrock/Lions, não no Anglo) e o Anexo Técnico v2 enviado à prefeitura ainda descreve o Anglo a 3,77 km. Repor os km depois da vistoria do DTS."
+  },
+  "schedule": [
+    {
+      "time": "06:00",
+      "label": "Arena aberta",
+      "detail": "Guarda-volumes e retirada de kit remanescente"
+    },
+    {
+      "time": "07:10",
+      "label": "Aquecimento coletivo"
+    },
+    {
+      "time": "07:30",
+      "label": "Largada 10 km e 5 km"
+    },
+    {
+      "time": "08:30",
+      "label": "Largada caminhada 3 km"
+    },
+    {
+      "time": "09:15",
+      "label": "Premiação"
+    },
+    {
+      "time": "09:45",
+      "label": "Brinde do bando"
+    },
+    {
+      "time": "10:30",
+      "label": "Encerramento da prova"
+    },
+    {
+      "time": "Tarde",
+      "label": "Festa de confraternização",
+      "detail": "Abre a temporada de festas de dezembro"
+    }
+  ],
+  "kit": [
+    {
+      "id": "camiseta",
+      "label": "Camiseta técnica oficial"
+    },
+    {
+      "id": "numero",
+      "label": "Número de peito"
+    },
+    {
+      "id": "chip",
+      "label": "Chip de cronometragem",
+      "detail": "Só nas corridas de 5 e 10 km"
+    },
+    {
+      "id": "ecobag",
+      "label": "Ecobag"
+    },
+    {
+      "id": "medalha",
+      "label": "Medalha na chegada"
+    },
+    {
+      "id": "lounge",
+      "label": "Acesso ao lounge"
+    },
+    {
+      "id": "brinde",
+      "label": "Brinde dos patrocinadores"
+    },
+    {
+      "id": "voucher",
+      "label": "Voucher dos parceiros",
+      "detailTodo": "Confirmar com o Raphael de que voucher se trata"
+    },
+    {
+      "id": "ficha",
+      "label": "Ficha de pouso",
+      "detail": "Um chopp ou uma bebida sem álcool no Bem Te Vi. Chopp só para maiores de 18.",
+      "highlight": true
+    }
+  ],
+  "kitPickup": [
+    {
+      "day": "2026-11-27",
+      "weekday": "sexta",
+      "from": "14:00",
+      "to": "21:00"
+    },
+    {
+      "day": "2026-11-28",
+      "weekday": "sábado",
+      "from": "10:00",
+      "to": "18:00"
+    }
+  ],
+  "kitPickupRaceDay": "Quem é de fora retira no dia, das 06h00 às 07h00, com pedido até 22/11.",
+  "sponsors": [
+    {
+      "name": "Gonçalves Imóveis",
+      "logo": "/sponsors/goncalves-imoveis.svg",
+      "logoWhite": "/sponsors/goncalves-imoveis-branco.svg",
+      "logoNote": "Símbolo traçado do card 6 do post do treinão (14/10); sem o nome por extenso. Pedir o vetor original",
+      "logoNavy": "/sponsors/goncalves-imoveis-navy.svg"
+    },
+    {
+      "name": "Boa Vista Seguros",
+      "logo": "/sponsors/boa-vista-seguros.svg",
+      "logoWhite": "/sponsors/boa-vista-seguros-branco.svg",
+      "role": "Seguro oficial do evento",
+      "logoNote": "Símbolo traçado do card 6 do post do treinão (14/10); sem o nome por extenso. Pedir o vetor original",
+      "logoNavy": "/sponsors/boa-vista-seguros-navy.svg"
+    },
+    {
+      "name": "Batata Pura",
+      "logo": "/sponsors/batata-pura.svg",
+      "logoWhite": "/sponsors/batata-pura-branco.svg",
+      "logoNavy": "/sponsors/batata-pura-navy.svg"
+    },
+    {
+      "name": "Cimentolândia",
+      "logo": "/sponsors/cimentolandia.svg",
+      "logoWhite": "/sponsors/cimentolandia-branco.svg",
+      "statusTodo": "Controle de 13/10 diz A CONFIRMAR; o brief de 14/10 lista como confirmado",
+      "logoNavy": "/sponsors/cimentolandia-navy.svg"
+    },
+    {
+      "name": "Wisekey",
+      "logo": "/sponsors/wisekey.png",
+      "logoWhite": "/sponsors/wisekey-branco.png",
+      "logoNavy": "/sponsors/wisekey-navy.png",
+      "logoNote": "PNG de 01_WISEKEY/01_Wise_Core/05_Marca_e_Identidade/04_Tipografia"
+    },
+    {
+      "name": "LBE",
+      "role": "Branding",
+      "logo": "/sponsors/lbe.png",
+      "logoWhite": "/sponsors/lbe-branco.png",
+      "logoNavy": "/sponsors/lbe-navy.png",
+      "logoNote": "Ladislau Branding Estúdio (@lbe.strategy, lbestrategy.com); PNG do site deles, 14/10"
+    }
+  ],
+  "partners": [
+    {
+      "name": "Confraria Bem Te Vi",
+      "role": "Confraria anfitriã, arena, largada, chegada e pouso",
+      "logo": "TODO",
+      "logoWhite": "TODO"
+    },
+    {
+      "name": "The Hybrid Club",
+      "role": "Realização",
+      "logo": "TODO",
+      "logoWhite": "/sponsors/the-hybrid-club-branco.svg",
+      "logoNavy": "/sponsors/the-hybrid-club-navy.svg"
+    },
+    {
+      "name": "Fisio Cefe",
+      "role": "Fisioterapia oficial, tenda na arena",
+      "logo": "/sponsors/fisio-cefe.png",
+      "logoWhite": "/sponsors/fisio-cefe-branco.png",
+      "logoTodo": "PNG do Desktop; pedir o SVG",
+      "logoNavy": "/sponsors/fisio-cefe-navy.png"
+    },
+    {
+      "name": "Fotop",
+      "role": "Fotos oficiais da prova",
+      "logo": "/sponsors/fotop.svg",
+      "logoWhite": "/sponsors/fotop-branco.svg",
+      "logoNote": "SVG oficial do site fotop.com, 14/10",
+      "logoNavy": "/sponsors/fotop-navy.svg"
+    },
+    {
+      "name": "Ticket Sports",
+      "role": "Inscrições",
+      "logo": "TODO",
+      "logoWhite": "TODO"
+    },
+    {
+      "name": "Superação Eventos",
+      "role": "Estrutura do evento",
+      "logo": "TODO",
+      "logoWhite": "TODO",
+      "logoTodo": "Sem logo nos PDFs de orçamento; pedir"
+    }
+  ],
+  "sponsorPitch": "Sua marca na porta da Confraria Bem Te Vi, na frente dos corredores e das famílias que ficam o domingo inteiro.",
+  "faq": [
+    {
+      "q": "Qual a idade mínima?",
+      "a": "Corrida 10 km: 16 anos. Corrida 5 km: 12 anos. Caminhada 3 km: idade livre. Menores participam com autorização do responsável."
+    },
+    {
+      "q": "A caminhada tem chip?",
+      "a": "Não. O chip de cronometragem vai só nas corridas de 5 km e 10 km. A caminhada recebe o mesmo kit, com medalha e ficha de pouso."
+    },
+    {
+      "q": "Posso transferir minha inscrição?",
+      "a": "Sim, até 30/10, pela Ticket Sports. Depois dessa data a inscrição é pessoal e intransferível."
+    },
+    {
+      "q": "Meu tamanho de camiseta é garantido?",
+      "a": "Inscrições feitas até 30/10 têm o tamanho garantido. Depois disso a camiseta fica sujeita à grade disponível."
+    },
+    {
+      "q": "Sou de fora. Posso retirar o kit no dia?",
+      "a": "Pode, das 06h00 às 07h00 no Bem Te Vi, com pedido feito até 22/11 pelo WhatsApp da organização."
+    },
+    {
+      "q": "Tenho cupom de um parceiro. Onde uso?",
+      "a": "No checkout da Ticket Sports, no campo de cupom. Os códigos são entregues pelos parceiros."
+    },
+    {
+      "q": "Como funciona o desconto para 60+ e PCD?",
+      "a": "50% de desconto em qualquer modalidade, aplicado na Ticket Sports. Leve um documento na retirada do kit."
+    },
+    {
+      "q": "A ficha de pouso vale chopp?",
+      "a": "Vale um chopp ou uma bebida sem álcool. Chopp só para maiores de 18 anos, com documento."
+    },
+    {
+      "q": "Tem guarda-volumes?",
+      "a": "Tem, na arena, a partir das 06h00. Leve só o necessário: a organização não se responsabiliza por objetos de valor."
+    },
+    {
+      "q": "Onde estaciono?",
+      "a": "[PREENCHER: estacionamento e acesso, definir com o Bem Te Vi]"
+    }
+  ],
+  "regulationUrl": "TODO",
+  "regulationTodo": "Não linkar a v1.0: tem lotes antigos, 700 vagas, largada 7h00 e organizador antigo. Esperar a v1.1.",
+  "contactWhatsapp": "5519981830557",
+  "instagram": [
+    "thehybridclube",
+    "bemtevi.confraria"
+  ],
+  "photosCredit": "Fotos: Confraria Bem Te Vi e corredores de São João da Boa Vista, com autorização",
+  "analytics": {
+    "ga4": "TODO",
+    "metaPixel": "TODO"
+  },
+  "collab": "The Hybrid Club × Confraria Bem Te Vi",
+  "captains": {
+    "eyebrow": "Capitães do bando",
+    "title": "Corre em grupo? Traz o grupo inteiro.",
+    "lede": "Assessoria, academia, box, grupo de corrida ou empresa: quem traz a equipe vira capitão e corre com vantagem.",
+    "perks": [
+      {
+        "title": "1 inscrição cortesia a cada 10 da equipe",
+        "detail": "Conta no link do capitão, direto na Ticket Sports."
+      },
+      {
+        "title": "Troféu de equipe com mais pousos",
+        "detail": "Entregue na premiação, com o nome do grupo no palco."
+      },
+      {
+        "title": "Post collab de apresentação da equipe",
+        "detail": "Nos perfis da prova e do Bem Te Vi."
+      },
+      {
+        "title": "Link ou cupom rastreável",
+        "detail": "Para saber exatamente quem veio pelo seu grupo."
+      }
+    ],
+    "cta": "Quero ser capitão",
+    "who": "Vale para grupos de São João da Boa Vista e região",
+    "whatsappText": "Olá! Quero ser capitão do bando na Bem Te Vi Hybrid Run, 29/11. Meu grupo: "
+  },
+  "training": {
+    "eyebrow": "Treinão de sábado",
+    "title": "Todo sábado tem treino. E tem chegada.",
+    "lede": "Treino de corrida saindo do Bem Te Vi e terminando no Bem Te Vi. Aberto, de graça, para qualquer ritmo. Não precisa estar inscrito na prova para ir.",
+    "firstLabel": "Primeiro encontro",
+    "firstDate": "17.10",
+    "time": "08h30",
+    "where": "Na porta do Bem Te Vi, Av. Dr. Durval Nicolau, 1705. Depois, todo sábado até 29/11.",
+    "facts": [
+      {
+        "title": "3 km, ritmo de bando",
+        "detail": "Quem quer puxar, puxa. Quem quer trotar, trota. Ninguém fica para trás."
+      },
+      {
+        "title": "Vai subindo",
+        "detail": "3, 3, 5, 5, 7, 7 km. Os 10 km só no dia 29."
+      },
+      {
+        "title": "O treino acaba na mesa",
+        "detail": "O bar abre às 10h e o chopp sai a R$ 9,90 até meio-dia para quem treinou."
+      },
+      {
+        "title": "Chama a turma",
+        "detail": "Da corrida, da academia, do trabalho. Quem nunca correu também vem."
+      }
+    ],
+    "note": "Cerveja merecida, como todo atleta híbrido. Chopp só para maiores de 18."
+  },
+  "siteName": "Bem Te Vi Hybrid Run",
+  "editionName": "Bem Te Vi",
+  "ideia": {
+    "eyebrow": "Como funciona",
+    "title": "Corre de manhã, pousa na mesa, fica o domingo inteiro.",
+    "lede": "Largada às 07h30 para os 10 km e 5 km, caminhada às 08h30. Todo mundo chega no mesmo lugar: a arena na porta da Confraria Bem Te Vi, com o pouso aberto desde cedo. Premiação, brinde do bando e, à tarde, a festa que abre a temporada de dezembro."
+  },
+  "heroLede": "Corrida de 10 km, 5 km e caminhada de 3 km pela Av. Dr. Durval Nicolau, com largada e chegada na porta da Confraria Bem Te Vi. Chip, medalha, camiseta técnica e ficha de pouso. Você termina a prova e a mesa já está posta: café, chopp, música e a família esperando."
+}

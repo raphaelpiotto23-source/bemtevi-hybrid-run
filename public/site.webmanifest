@@ -1,0 +1,13 @@
+{
+  "name": "The Hybrid Run",
+  "short_name": "Hybrid Run",
+  "description": "Corrida 10 km, 5 km e caminhada 3 km em São João da Boa Vista, 29.11.2026. A linha de chegada é a mesa.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0B1F3A",
+  "theme_color": "#0B1F3A",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

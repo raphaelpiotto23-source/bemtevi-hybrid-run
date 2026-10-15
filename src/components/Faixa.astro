@@ -1,0 +1,32 @@
+---
+import event from '../data/event.json';
+const logo = (x) => (x.logoNavy ? x.logoNavy : null);
+const symbolOnly = (x) => /simbolo|Símbolo/.test(x.logoNote || '');
+---
+<div class="faixa" aria-label="Patrocinadores">
+  <div class="wrap row">
+    <span class="label">Com</span>
+    <div class="marq">
+    <ul>
+      {event.sponsors.map((s) => <li>{logo(s) && <img src={logo(s)} alt={symbolOnly(s) ? '' : s.name} height="28" loading="lazy" decoding="async" />}{(!logo(s) || symbolOnly(s)) && <span>{s.name}</span>}</li>)}
+    </ul>
+    <ul aria-hidden="true">
+      {event.sponsors.map((s) => <li>{logo(s) && <img src={logo(s)} alt="" height="28" loading="lazy" decoding="async" />}{(!logo(s) || symbolOnly(s)) && <span>{s.name}</span>}</li>)}
+    </ul>
+    </div>
+    <a class="label more" href="#bando">Todos os parceiros</a>
+  </div>
+</div>
+<style>
+  .faixa { background: var(--color-paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .row { display: flex; align-items: center; gap: 20px; min-height: 64px; padding-block: 12px; }
+  .marq { flex: 1; min-width: 0; overflow: hidden; display: flex; gap: 40px; mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+  ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 40px; flex: none; animation: faixa 28s linear infinite; }
+  .marq:hover > ul { animation-play-state: paused; }
+  @keyframes faixa { from { transform: translateX(calc(-100% - 40px)); } to { transform: translateX(0); } }
+  li { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 15px; letter-spacing: -0.01em; white-space: nowrap; }
+  li img { height: 36px; width: auto; display: block; }
+  .more { text-decoration: none; color: var(--accent); white-space: nowrap; }
+  .more:hover { text-decoration: underline; }
+  @media (prefers-reduced-motion: reduce) { ul { animation: none; } ul[aria-hidden] { display: none; } .marq { overflow-x: auto; mask-image: none; -webkit-mask-image: none; } }
+</style>

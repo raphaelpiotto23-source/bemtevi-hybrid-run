@@ -1,0 +1,45 @@
+---
+import event from '../data/event.json';
+import fotos from '../data/fotos2.json';
+import { currentScheduleIndex } from '../lib/lotes.js';
+const cur = currentScheduleIndex(event, new Date());
+const f = fotos.placa_dia;
+---
+<section id="programacao" class="sec">
+  <div class="wrap">
+    <div class="sec-h reveal">
+      <p class="eyebrow">Programação</p>
+      <h2>Domingo, 29 de novembro.</h2>
+      <p class="lede">Chega cedo. A arena abre às seis, e depois da prova ninguém vai embora.</p>
+    </div>
+    <div class="grid">
+      <ol class="sched" data-schedule>
+        {event.schedule.map((s, i) => (
+          <li class={`row reveal${i === cur ? ' now' : ''}`} style={`--i: ${i}`}>
+            <span class="t mono">{s.time === 'Tarde' ? 'Tarde' : s.time.replace(':', 'h')}</span>
+            <span class="body"><span class="l">{s.label}</span>{s.detail && <span class="d">{s.detail}</span>}</span>
+            <span class="now-tag label" aria-hidden="true">Agora</span>
+          </li>
+        ))}
+      </ol>
+      <figure class="ph reveal">
+        <img src="/img/fotos/placa_dia-800.webp" srcset="/img/fotos/placa_dia-480.webp 480w, /img/fotos/placa_dia-800.webp 800w, /img/fotos/placa_dia-1600.webp 1600w" sizes="(min-width: 820px) 34vw, 100vw" width={f.sizes['800'].w} height={f.sizes['800'].h} alt={f.alt} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </div>
+</section>
+<style>
+  .grid { display: grid; gap: 24px; }
+  .sched { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .row { display: grid; grid-template-columns: 84px 1fr auto; gap: 12px; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--line); transition-delay: calc(var(--i) * 50ms); }
+  .t { color: var(--accent); font-weight: 600; letter-spacing: 0.04em; }
+  .body { display: grid; gap: 2px; }
+  .l { font-weight: 600; font-size: 19px; }
+  .d { font-size: 15px; color: var(--fg2); }
+  .now-tag { display: none; color: var(--color-navy); background: var(--color-aqua); padding: 4px 10px; border-radius: 999px; font-size: 11px; }
+  .row.now { background: linear-gradient(90deg, rgba(27,122,140,.12), transparent); padding-inline: 12px; margin-inline: -12px; border-radius: 12px; }
+  .row.now .now-tag { display: inline-block; }
+  .ph { margin: 0; border-radius: 16px; overflow: hidden; aspect-ratio: 4 / 5; border: 1px solid var(--line); }
+  .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  @media (min-width: 820px) { .grid { grid-template-columns: 1.4fr 1fr; align-items: start; } }
+</style>

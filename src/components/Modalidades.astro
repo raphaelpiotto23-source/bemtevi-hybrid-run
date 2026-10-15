@@ -1,0 +1,64 @@
+---
+import event from '../data/event.json';
+import { loteState, priceFor, brl, shirtState, registrationUrl } from '../lib/lotes.js';
+const now = new Date();
+const st = loteState(event, now);
+const shirt = shirtState(event, now);
+const cards = event.distances.map((d) => ({ d, p: priceFor(event, st, d.id) }));
+---
+<section id="precos" class="sec sand">
+  <div class="wrap">
+    <div class="sec-h reveal">
+      <p class="eyebrow">Modalidades e preços</p>
+      <h2>Três jeitos de chegar na mesa.</h2>
+      <p class="lede">Corrida com chip e medalha, ou caminhada em família. Todo mundo termina no mesmo lugar: o pouso.</p>
+    </div>
+
+    <div class="tools reveal">
+      <label class="toggle">
+        <input type="checkbox" id="desc" data-desc />
+        <span class="sw" aria-hidden="true"></span>
+        <span>Sou 60+ ou PCD <small>(50% de desconto)</small></span>
+      </label>
+      <p class="label" data-lote-label>{st.kind === 'lote' ? `Preço do ${st.lote.label}` : st.kind === 'encerrado' ? 'Inscrições encerradas' : cards[0].p.label}</p>
+    </div>
+
+    <div class="cards">
+      {cards.map(({ d, p }) => (
+        <article class="card reveal" data-dist={d.id}>
+          <p class="eyebrow">{d.chip ? 'Corrida' : 'Caminhada'}</p>
+          <p class="dist mono">{d.short}</p>
+          <ul class="specs">
+            <li>Largada <strong class="mono">{d.start.replace(':', 'h')}</strong></li>
+            <li>{d.minAge ? `A partir de ${d.minAge} anos` : 'Idade livre'}</li>
+            <li>{d.chip ? 'Com chip de cronometragem' : 'Sem chip'}</li>
+          </ul>
+          <p class="price mono" data-price data-base={p.current ?? ''}>{p.current != null ? brl(p.current) : 'Encerrado'}</p>
+          <p class="next" data-next data-next-label={p.next?.label ?? ''} data-next-base={p.next?.price ?? ''} hidden={!p.next}>
+            {p.next && <>no {p.next.label.toLowerCase()}: <span class="strike mono">{brl(p.next.price)}</span></>}
+          </p>
+          <a class="btn btn-aqua" href={registrationUrl(event, d.id)} target="_blank" rel="noopener" data-cta={`card-${d.id}`}>Inscreva-se</a>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>
+<style>
+  .tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+  .toggle { display: inline-flex; align-items: center; gap: 12px; cursor: pointer; font-weight: 400; }
+  .toggle small { font-weight: 400; color: var(--fg2); }
+  .toggle input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .sw { width: 48px; height: 28px; border-radius: 999px; background: rgba(11,31,58,.18); position: relative; transition: background .2s; flex: none; }
+  .sw::after { content: ""; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: var(--color-paper); transition: transform .2s; box-shadow: 0 1px 2px rgba(0,0,0,.2); }
+  .toggle input:checked + .sw { background: var(--accent); }
+  .toggle input:checked + .sw::after { transform: translateX(20px); }
+  .toggle input:focus-visible + .sw { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .cards { display: grid; gap: 16px; }
+  .card { display: grid; gap: 14px; align-content: start; }
+  .dist { font-size: clamp(48px, 7vw, 72px); font-weight: 600; line-height: 1; letter-spacing: -0.03em; }
+  .specs { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; color: var(--fg2); font-size: 16px; }
+  .price { font-size: clamp(34px, 4vw, 44px); font-weight: 600; letter-spacing: -0.02em; line-height: 1; margin-top: 8px; }
+  .next { font-size: 15px; color: var(--fg2); min-height: 1.5em; }
+  @media (min-width: 720px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+</style>

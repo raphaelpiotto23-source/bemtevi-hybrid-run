@@ -1,0 +1,48 @@
+---
+import event from '../data/event.json';
+import { whatsappUrl } from '../lib/lotes.js';
+const wa = whatsappUrl(event, `Olá! Tenho uma dúvida sobre a ${event.name}.`);
+const reg = event.regulationUrl !== 'TODO' ? event.regulationUrl : null;
+---
+<footer class="foot">
+  <div class="wrap grid">
+    <div>
+      <img class="selo" src="/img/logo-corrida-160.png" width="72" height="72" alt="Selo da prova" loading="lazy" decoding="async" />
+      <p class="label">Realização</p>
+      <p class="big">{event.collab}</p>
+      <p class="small">{event.name}. {event.circuit}. {event.edition}.</p>
+    </div>
+    <div>
+      <p class="label">Instagram</p>
+      <ul>
+        {event.instagram.map((h) => <li><a href={`https://www.instagram.com/${h}/`} target="_blank" rel="noopener">@{h}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <p class="label">Contato e documentos</p>
+      <ul>
+        <li><a href={wa} target="_blank" rel="noopener">WhatsApp da organização</a></li>
+        <li>{reg ? <a href={reg} target="_blank" rel="noopener">Regulamento</a> : <span class="muted">Regulamento: publicação em breve</span>}</li>
+        <li><a href={event.registrationUrl} target="_blank" rel="noopener">Inscrições na Ticket Sports</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap base">
+    <p class="small">{event.venue.name} · {event.venue.address} · {event.venue.city}/{event.venue.state}</p>
+    <p class="small">{event.photosCredit}.</p>
+  </div>
+</footer>
+<style>
+  .foot { background: var(--color-sand); border-top: 1px solid var(--line); padding-block: 56px 96px; }
+  .grid { display: grid; gap: 32px; }
+  .selo { border-radius: 50%; margin-bottom: 16px; }
+  .big { font-weight: 800; font-size: 22px; line-height: 1.2; margin-top: 8px; }
+  .small { font-size: 14px; color: var(--fg2); margin-top: 8px; }
+  ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+  a { text-decoration: none; }
+  a:hover { color: var(--accent); }
+  .muted { color: var(--fg2); }
+  .base { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); display: grid; gap: 4px; }
+  @media (min-width: 720px) { .grid { grid-template-columns: 1.3fr 1fr 1fr; } }
+  @media (min-width: 820px) { .foot { padding-bottom: 56px; } }
+</style>

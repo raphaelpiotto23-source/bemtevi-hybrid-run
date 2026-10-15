@@ -1,0 +1,86 @@
+{
+ "arte_mesa": {
+  "alt": "Arte da campanha: a única corrida onde a linha de chegada é a mesa",
+  "src": "03_HYBRID_CLUB\\02_Hybrid_Run_BemTeVi\\02_Campanha\\01_Artes\\2026-07-14_Lancamento\\Card2_AMesa.png",
+  "sizes": {
+   "1080": {
+    "w": 1080,
+    "h": 1350,
+    "kb": 24
+   },
+   "800": {
+    "w": 800,
+    "h": 1000,
+    "kb": 18
+   },
+   "480": {
+    "w": 480,
+    "h": 600,
+    "kb": 10
+   }
+  }
+ },
+ "arte_ritual": {
+  "alt": "Arte da campanha: cruzou a linha? Agora começa o pouso, em cinco passos",
+  "src": "03_HYBRID_CLUB\\02_Hybrid_Run_BemTeVi\\02_Campanha\\01_Artes\\2026-07-14_Lancamento\\Card3_RitualDoPouso.png",
+  "sizes": {
+   "1080": {
+    "w": 1080,
+    "h": 1350,
+    "kb": 41
+   },
+   "800": {
+    "w": 800,
+    "h": 1000,
+    "kb": 29
+   },
+   "480": {
+    "w": 480,
+    "h": 600,
+    "kb": 16
+   }
+  }
+ },
+ "arte_kit": {
+  "alt": "Arte da campanha: o que chega na tua mão antes da largada",
+  "src": "03_HYBRID_CLUB\\02_Hybrid_Run_BemTeVi\\02_Campanha\\01_Artes\\2026-08-26_Corrida\\P13_kit_c1.png",
+  "sizes": {
+   "1080": {
+    "w": 1080,
+    "h": 1350,
+    "kb": 42
+   },
+   "800": {
+    "w": 800,
+    "h": 1000,
+    "kb": 31
+   },
+   "480": {
+    "w": 480,
+    "h": 600,
+    "kb": 18
+   }
+  }
+ },
+ "arte_brinde": {
+  "alt": "Arte da campanha: o brinde do bando, todo mundo junto de uma vez só",
+  "src": "03_HYBRID_CLUB\\02_Hybrid_Run_BemTeVi\\02_Campanha\\01_Artes\\2026-08-26_Corrida\\P12_mesa_c4.png",
+  "sizes": {
+   "1080": {
+    "w": 1080,
+    "h": 1350,
+    "kb": 26
+   },
+   "800": {
+    "w": 800,
+    "h": 1000,
+    "kb": 18
+   },
+   "480": {
+    "w": 480,
+    "h": 600,
+    "kb": 10
+   }
+  }
+ }
+}

@@ -1,0 +1,66 @@
+---
+import '../styles/global.css';
+import event from '../data/event.json';
+import { loteState, priceFor } from '../lib/lotes.js';
+
+const title = `${event.name} · Corrida 10 km, 5 km e caminhada em São João da Boa Vista · 29.11.2026`;
+const description = `${event.tagline} Largada e chegada na porta do Bem Te Vi, com café, chopp, música e família. Etapa de abertura do Circuito Hybrid. Inscrições abertas para São João da Boa Vista e região.`;
+const site = event.siteUrl === 'TODO' ? null : event.siteUrl.replace(/\/$/, '');
+const st = loteState(event, new Date());
+const offers = event.distances.map((d) => {
+  const p = priceFor(event, st, d.id);
+  return { '@type': 'Offer', name: d.label, url: event.registrationUrl, priceCurrency: 'BRL', price: p.current ?? undefined, availability: p.current ? 'https://schema.org/InStock' : 'https://schema.org/SoldOut' };
+});
+const jsonld = {
+  '@context': 'https://schema.org', '@type': 'SportsEvent',
+  name: `${event.name} ${event.edition}`, description: event.tagline,
+  startDate: event.raceStart, endDate: event.raceEnd,
+  eventStatus: 'https://schema.org/EventScheduled', eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  sport: 'Corrida de rua',
+  image: site ? `${site}/og-image.png` : undefined, url: site || undefined,
+  location: { '@type': 'Place', name: event.venue.name, address: { '@type': 'PostalAddress', streetAddress: event.venue.address, addressLocality: event.venue.city, addressRegion: event.venue.state, addressCountry: 'BR' }, geo: { '@type': 'GeoCoordinates', latitude: event.venue.lat, longitude: event.venue.lon } },
+  organizer: { '@type': 'Organization', name: 'The Hybrid Club', sameAs: `https://www.instagram.com/${event.instagram[0]}/` },
+  offers,
+};
+const ga4 = event.analytics.ga4 !== 'TODO' ? event.analytics.ga4 : null;
+const pixel = event.analytics.metaPixel !== 'TODO' ? event.analytics.metaPixel : null;
+---
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <!-- domínio: TODO (siteUrl no event.json e site no astro.config.mjs) -->
+  {site && <link rel="canonical" href={`${site}/`} />}
+  <meta name="theme-color" content="#FDFBF7" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content={event.siteName} />
+  <meta property="og:title" content={`${event.name} · 29.11.2026 · São João da Boa Vista`} />
+  <meta property="og:description" content={event.tagline} />
+  {site && <meta property="og:url" content={`${site}/`} />}
+  <meta property="og:image" content={site ? `${site}/og-image.png` : '/og-image.png'} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={`${event.name}, 29.11.2026, São João da Boa Vista`} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={`${event.name} · 29.11.2026`} />
+  <meta name="twitter:description" content={event.tagline} />
+  <meta name="twitter:image" content={site ? `${site}/og-image.png` : '/og-image.png'} />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+  <link rel="preload" href="/fonts/poppins-800.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/jetbrains-mono-400.woff2" as="font" type="font/woff2" crossorigin />
+  {ga4 && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4}`}></script>}
+  {ga4 && <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${ga4}');`} />}
+  {pixel && <script is:inline set:html={`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${pixel}');fbq('track','PageView');`} />}
+</head>
+<body>
+  <slot />
+</body>
+</html>

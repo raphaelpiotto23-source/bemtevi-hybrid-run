@@ -1,0 +1,29 @@
+---
+import event from '../data/event.json';
+---
+<section id="faq" class="sec sand">
+  <div class="wrap">
+    <div class="sec-h reveal">
+      <p class="eyebrow">Perguntas frequentes</p>
+      <h2>O que todo mundo pergunta.</h2>
+    </div>
+    <div class="list reveal">
+      {event.faq.map((f) => (
+        <details class="q">
+          <summary><span>{f.q}</span><span class="pm" aria-hidden="true"></span></summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+<style>
+  .list { max-width: 760px; border-top: 1px solid var(--line); }
+  .q { border-bottom: 1px solid var(--line); }
+  summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 0; font-weight: 600; font-size: 18px; min-height: 48px; }
+  .pm { position: relative; width: 20px; height: 20px; flex: none; }
+  .pm::before, .pm::after { content: ""; position: absolute; background: var(--accent); border-radius: 2px; inset: 9px 0; }
+  .pm::after { inset: 0 9px; transition: transform .2s; }
+  .q[open] .pm::after { transform: scaleY(0); }
+  .q p { padding: 0 0 20px; color: var(--fg2); max-width: 680px; }
+</style>

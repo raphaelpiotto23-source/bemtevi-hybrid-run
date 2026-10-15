@@ -1,0 +1,43 @@
+---
+import event from '../data/event.json';
+const t = event.training;
+---
+<section id="treinao" class="sec sand">
+  <div class="wrap">
+    <div class="sec-h reveal">
+      <p class="eyebrow">{t.eyebrow}</p>
+      <h2>{t.title}</h2>
+      <p class="lede">{t.lede}</p>
+    </div>
+    <div class="grid">
+      <div class="big reveal">
+        <p class="label">{t.firstLabel}</p>
+        <p class="when mono">{t.firstDate}</p>
+        <p class="hour mono">{t.time}</p>
+        <p class="where">{t.where}</p>
+      </div>
+      <ul class="facts">
+        {t.facts.map((f, i) => (
+          <li class="reveal" style={`--i: ${i}`}>
+            <strong>{f.title}</strong>
+            <span>{f.detail}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <p class="note reveal">{t.note}</p>
+  </div>
+</section>
+<style>
+  .grid { display: grid; gap: 16px; }
+  .big { display: grid; gap: 6px; align-content: start; padding: 28px; border-radius: 20px; background: var(--color-paper); border: 1px solid var(--line); }
+  .when { font-size: clamp(40px, 6vw, 64px); font-weight: 600; line-height: 1; letter-spacing: -0.03em; }
+  .hour { font-size: clamp(28px, 3.6vw, 40px); font-weight: 600; color: var(--accent); line-height: 1.1; }
+  .where { color: var(--fg2); font-size: 15px; margin-top: 6px; }
+  .facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .facts li { display: grid; gap: 4px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--color-paper); transition-delay: calc(var(--i) * 60ms); }
+  .facts strong { font-weight: 600; font-size: 18px; }
+  .facts span { font-size: 15px; color: var(--fg2); }
+  .note { margin-top: 20px; max-width: 760px; font-size: 15px; color: var(--fg2); }
+  @media (min-width: 820px) { .grid { grid-template-columns: 1fr 1.4fr; align-items: stretch; } .facts { grid-template-columns: 1fr 1fr; } }
+</style>

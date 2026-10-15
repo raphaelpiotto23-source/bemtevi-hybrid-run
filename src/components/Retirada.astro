@@ -1,0 +1,39 @@
+---
+import event from '../data/event.json';
+const days = event.kitPickup.map((k) => ({ ...k, dd: k.day.slice(8), mm: k.day.slice(5, 7) }));
+---
+<section id="retirada" class="sec sand">
+  <div class="wrap">
+    <div class="sec-h reveal">
+      <p class="eyebrow">Retirada do kit</p>
+      <h2>No Bem Te Vi, na sexta ou no sábado.</h2>
+      <p class="lede">Leve um documento com foto. Para retirar o kit de outra pessoa, autorização assinada e cópia do documento dela.</p>
+    </div>
+    <div class="days">
+      {days.map((k) => (
+        <div class="day card reveal">
+          <p class="label">{k.weekday}</p>
+          <p class="date mono">{k.dd}.{k.mm}</p>
+          <p class="hours mono">{k.from.replace(':', 'h')} às {k.to.replace(':', 'h')}</p>
+        </div>
+      ))}
+      <div class="where card reveal">
+        <p class="label">Onde</p>
+        <p class="addr"><strong>{event.venue.name}</strong><br />{event.venue.address}<br />{event.venue.city}/{event.venue.state}</p>
+        <a class="btn btn-ghost" href={event.venue.mapsUrl} target="_blank" rel="noopener">Como chegar</a>
+      </div>
+    </div>
+    <p class="note reveal">{event.kitPickupRaceDay} Nos dois dias de retirada o balcão também abre inscrições, sem camiseta, enquanto houver vaga.</p>
+  </div>
+</section>
+<style>
+  .days { display: grid; gap: 16px; }
+  .day { display: grid; gap: 6px; align-content: start; }
+  .date { font-size: clamp(48px, 7vw, 72px); font-weight: 600; line-height: 1; letter-spacing: -0.03em; }
+  .hours { font-size: 20px; font-weight: 600; color: var(--accent); }
+  .where { display: grid; gap: 14px; align-content: start; }
+  .addr { line-height: 1.5; }
+  .where .btn { justify-self: start; }
+  .note { margin-top: 24px; max-width: 760px; font-size: 15px; color: var(--fg2); }
+  @media (min-width: 720px) { .days { grid-template-columns: 1fr 1fr 1.3fr; } }
+</style>

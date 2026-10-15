@@ -1,0 +1,74 @@
+---
+import event from '../data/event.json';
+import fotos from '../data/fotos2.json';
+import { loteState, badge, raceState, countdownParts, pad2, registrationUrl } from '../lib/lotes.js';
+const now = new Date();
+const st = loteState(event, now);
+const b = badge(st);
+const r = raceState(event, now);
+const c = countdownParts(r.ms);
+const f = fotos.dia;
+const units = [['d', 'dias', c.d], ['h', 'horas', c.h], ['m', 'min', c.m], ['s', 'seg', c.s]];
+---
+<section id="inicio" class="hero">
+  <div class="wrap grid">
+  <div class="content">
+    <div class="collab">
+      <img class="selo" src="/img/logo-corrida-160.png" width="80" height="80" alt="Selo da prova: bem-te-vi de óculos, São João da Boa Vista, 29.11.2026" fetchpriority="high" />
+      <p class="eyebrow">{event.collab}<br />{event.circuit} · {event.edition}</p>
+    </div>
+    <h1><span class="ed">{event.editionName}</span>Hybrid Run</h1>
+    <p class="when mono">29.11 · 07H30 · SÃO JOÃO DA BOA VISTA</p>
+    <p class="hook">{event.heroLede}</p>
+
+    <div class="count" data-countdown data-kind={r.kind} aria-live="polite">
+      <p class="count-msg" data-count-msg hidden></p>
+      <div class="units" data-count-units>
+        {units.map(([k, label, v]) => (
+          <div class="unit">
+            <span class="num mono" data-unit={k}>{String(v).padStart(2, '0').split('').map((ch) => <span class="digit">{ch}</span>)}</span>
+            <span class="label">{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="btn btn-aqua" href={registrationUrl(event, 'hero')} target="_blank" rel="noopener" data-cta="hero">Inscreva-se</a>
+      <span class={`badge${b.urgent ? ' urgent' : ''}`} data-badge>{b.text}</span>
+    </div>
+    <p class="vagas label">Corrida 10 km e 5 km · Caminhada 3 km · Chip, medalha e ficha de pouso</p>
+  </div>
+  <figure class="ph">
+    <picture>
+      <source media="(max-width: 819px)" srcset="/img/fotos/dia-m-640.webp" />
+      <img src="/img/fotos/dia-800.webp" srcset={`/img/fotos/dia-800.webp 800w, /img/fotos/dia-1600.webp ${f.sizes['1600'].w}w`} sizes="(min-width: 820px) 46vw, 100vw" width={f.sizes['800'].w} height={f.sizes['800'].h} alt={f.alt} fetchpriority="high" decoding="async" />
+    </picture>
+  </figure>
+  </div>
+</section>
+<style>
+  .hero { background: var(--color-paper); overflow: hidden; }
+  .grid { display: grid; gap: 28px; padding-block: 32px 56px; }
+  .ph { margin: 0; border-radius: 20px; overflow: hidden; aspect-ratio: 4 / 3; order: -1; }
+  .ph img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+  .content { display: grid; gap: 20px; }
+  h1 { font-size: clamp(40px, 7vw, 84px); }
+  .ed { display: block; color: var(--accent); font-weight: 700; font-size: 0.62em; letter-spacing: 0; margin-bottom: 0.08em; }
+  .collab { display: flex; align-items: center; gap: 14px; }
+  .selo { width: 64px; height: 64px; border-radius: 50%; box-shadow: 0 0 0 2px var(--line); }
+  .when { font-size: clamp(14px, 1.6vw, 18px); letter-spacing: 0.16em; color: var(--accent); font-weight: 600; }
+  .hook { font-size: clamp(17px, 1.5vw, 20px); font-weight: 400; max-width: 600px; line-height: 1.55; color: var(--fg2); }
+  .count { margin-top: 8px; }
+  .units { display: flex; gap: 20px; flex-wrap: wrap; }
+  .unit { display: grid; gap: 4px; }
+  .num { font-size: clamp(40px, 7vw, 76px); font-weight: 600; line-height: 1; letter-spacing: -0.02em; perspective: 300px; }
+  .count-msg { font-size: clamp(28px, 4.5vw, 52px); font-weight: 800; line-height: 1.1; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 8px; }
+  .vagas { margin-top: 4px; }
+  @media (min-width: 820px) {
+    .grid { grid-template-columns: 1.1fr 1fr; align-items: center; gap: 56px; padding-block: 72px 96px; min-height: min(100svh, 880px); }
+    .ph { order: 0; aspect-ratio: 5 / 4; }
+    .selo { width: 80px; height: 80px; }
+  }
+</style>

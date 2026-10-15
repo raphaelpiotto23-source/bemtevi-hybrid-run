@@ -1,0 +1,46 @@
+---
+import event from '../data/event.json';
+import fotos from '../data/fotos2.json';
+import { whatsappUrl } from '../lib/lotes.js';
+const c = event.captains;
+const f = fotos.equipe;
+const wa = whatsappUrl(event, c.whatsappText);
+---
+<section id="capitaes" class="sec">
+  <div class="wrap grid">
+    <div>
+      <div class="sec-h reveal">
+        <p class="eyebrow">{c.eyebrow}</p>
+        <h2>{c.title}</h2>
+        <p class="lede">{c.lede}</p>
+      </div>
+      <ol class="perks">
+        {c.perks.map((p, i) => (
+          <li class="reveal" style={`--i: ${i}`}>
+            <span class="n mono">{String(i + 1).padStart(2, '0')}</span>
+            <span><strong>{p.title}</strong><span class="d">{p.detail}</span></span>
+          </li>
+        ))}
+      </ol>
+      <a class="btn btn-aqua reveal" href={wa} target="_blank" rel="noopener" data-cta="capitao">{c.cta}</a>
+      <p class="who label reveal">{c.who}</p>
+    </div>
+    <figure class="ph reveal">
+      <img src="/img/fotos/equipe-800.webp" srcset="/img/fotos/equipe-480.webp 480w, /img/fotos/equipe-800.webp 800w, /img/fotos/equipe-1600.webp 1320w" sizes="(min-width: 820px) 40vw, 100vw" width={f.sizes['800'].w} height={f.sizes['800'].h} alt={f.alt} loading="lazy" decoding="async" />
+    </figure>
+  </div>
+</section>
+<style>
+  .grid { display: grid; gap: 32px; }
+  .sec-h { margin-bottom: 32px; }
+  .perks { list-style: none; margin: 0 0 32px; padding: 0; display: grid; gap: 14px; }
+  .perks li { display: grid; grid-template-columns: 36px 1fr; gap: 12px; padding: 16px 0; border-top: 1px solid var(--line); transition-delay: calc(var(--i) * 60ms); }
+  .perks li:last-child { border-bottom: 1px solid var(--line); }
+  .n { color: var(--accent); font-weight: 600; font-size: 14px; padding-top: 4px; }
+  .perks strong { display: block; font-weight: 600; font-size: 18px; }
+  .d { display: block; font-size: 15px; color: var(--fg2); }
+  .who { margin-top: 16px; }
+  .ph { margin: 0; border-radius: 16px; overflow: hidden; aspect-ratio: 4 / 5; }
+  .ph img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; display: block; }
+  @media (min-width: 820px) { .grid { grid-template-columns: 1.3fr 1fr; align-items: center; } }
+</style>

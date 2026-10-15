@@ -1,0 +1,101 @@
+/*
+Sistema: Frio e editorial · The Hybrid Run, 1ª edição (manual Bem-Te-Vi Hybrid Run v1.0 + brief 14/10/2026)
+Tipo: Poppins 800 no título · Poppins 400/600 no corpo · JetBrains Mono no dado (hora, km, preço, countdown).
+      Escala 88/56/32/22/18/15/13. Corpo 18px, entrelinha 1,6. Rótulo em caixa alta, tracking 0,14em.
+Cor: navy #0B1F3A sobre branco quebrado #FDFBF7 · areia #F0EDE8 como segundo fundo claro · navy só no hero e no fecho (classe .dark)
+     aqua #2ABFCC só em CTA, selo e destaque · verde #4BA372 e teal #1B7A8C só dentro da onda · zero amarelo, zero gradiente quente
+Espaço: 4/8/12/16/24/32/48/64 · seção 112px desktop, 72px celular · leitura 760px
+Assinatura: a onda tripla (aqua, verde, teal) como divisor entre blocos; o pássaro só no fecho
+Lógica do funil: hero (vender) → ideia (explicar) → preços → percurso → kit → programação → retirada → bando → faq → fecho → footer
+Revisão: tudo que é redação nova está em event.json; dado que falta aparece como [PREENCHER: ...]
+*/
+@import "tailwindcss/utilities.css" layer(utilities);
+@layer theme, base, components, utilities;
+
+@theme {
+  --color-navy: #0B1F3A;
+  --color-navy2: #17213B;
+  --color-aqua: #2ABFCC;
+  --color-petrol: #3F839E;
+  --color-green: #4BA372;
+  --color-teal: #1B7A8C;
+  --color-paper: #FDFBF7;
+  --color-sand: #F0EDE8;
+  --color-mute: #AFC0D6;      /* texto secundário sobre navy, 8,9:1 */
+  --color-ink2: #3A4A63;      /* texto secundário sobre papel, 8,4:1 */
+  --color-line: rgba(253, 251, 247, 0.14);
+  --color-line-ink: rgba(11, 31, 58, 0.14);
+  --font-sans: Poppins, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@font-face { font-family: Poppins; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/poppins-400.woff2) format("woff2"); }
+@font-face { font-family: Poppins; font-style: normal; font-weight: 600; font-display: swap; src: url(/fonts/poppins-600.woff2) format("woff2"); }
+@font-face { font-family: Poppins; font-style: normal; font-weight: 800; font-display: swap; src: url(/fonts/poppins-800.woff2) format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 100 800; font-display: swap; src: url(/fonts/jetbrains-mono-400.woff2) format("woff2"); }
+
+@layer base {
+  :root { --bg: var(--color-paper); --fg: var(--color-navy); --fg2: var(--color-ink2); --line: var(--color-line-ink); --accent: var(--color-teal); }
+  .dark { --bg: var(--color-navy); --fg: var(--color-paper); --fg2: var(--color-mute); --line: var(--color-line); --accent: var(--color-aqua); background: var(--bg); color: var(--fg); }
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; }
+  img, svg { display: block; max-width: 100%; }
+  button, input { font: inherit; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font-sans); font-size: 18px; line-height: 1.6; font-weight: 400; }
+  h1, h2, h3 { font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(44px, 8.5vw, 96px); }
+  h2 { font-size: clamp(30px, 4.6vw, 56px); }
+  h3 { font-size: clamp(20px, 2.2vw, 24px); letter-spacing: -0.01em; line-height: 1.2; }
+  p { margin: 0; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  summary { cursor: pointer; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+}
+
+@layer components {
+  .wrap { width: min(100% - 32px, 1200px); margin-inline: auto; }
+  .sec { padding-block: 72px; content-visibility: auto; contain-intrinsic-size: auto 900px; }
+  @media (min-width: 820px) { .sec { padding-block: 112px; } }
+  .sec-h { max-width: 760px; display: grid; gap: 16px; margin-bottom: 48px; }
+  .lede { font-size: clamp(18px, 1.6vw, 22px); color: var(--fg2); max-width: 680px; }
+  .eyebrow { font-family: var(--font-mono); font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+  .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+  .label { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg2); }
+  .sand { background: var(--color-sand); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 12px 26px;
+         border-radius: 999px; font-weight: 600; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none;
+         transition: transform .15s ease, background-color .15s ease, color .15s ease; }
+  .btn:active { transform: translateY(1px); }
+  .btn-aqua { background: var(--color-aqua); color: var(--color-navy); }
+  .btn-aqua:hover { background: #4ED0DB; }
+  .btn-ghost { border: 2px solid var(--line); color: var(--fg); }
+  .btn-ghost:hover { border-color: var(--accent); }
+
+  .badge { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 13px; font-weight: 600; letter-spacing: 0.12em;
+           text-transform: uppercase; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--accent); color: var(--accent); }
+  .badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .badge.urgent { background: var(--color-aqua); color: var(--color-navy); border-color: var(--color-aqua); }
+  .badge.urgent::before { animation: pulse 1.4s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.6); opacity: .5; } }
+
+  .card { border: 1px solid var(--line); border-radius: 20px; padding: 28px; background: var(--color-paper); }
+
+  /* entrada discreta de seção */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+
+  /* dígito do countdown: troca com um leve flip */
+  .digit { display: inline-block; }
+  .digit.tick { animation: flip .35s ease; }
+  @keyframes flip { 0% { transform: translateY(-45%) rotateX(60deg); opacity: 0; } 100% { transform: none; opacity: 1; } }
+
+  .strike { text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: var(--color-petrol); }
+}

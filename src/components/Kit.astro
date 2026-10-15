@@ -1,0 +1,45 @@
+---
+import event from '../data/event.json';
+import fotos from '../data/fotos2.json';
+import { shirtState } from '../lib/lotes.js';
+const shirt = shirtState(event, new Date());
+const f = fotos.roxo;
+---
+<section id="kit" class="sec">
+  <div class="wrap">
+    <div class="sec-h reveal">
+      <p class="eyebrow">O kit</p>
+      <h2>O que vem com o número.</h2>
+      <p class="lede">Kit único para corrida e caminhada. A diferença está no chip, que vai só nas corridas.</p>
+    </div>
+    <div class="grid">
+      <ul class="items">
+        {event.kit.map((k, i) => (
+          <li class={`it reveal${k.highlight ? ' hi' : ''}`} style={`--i: ${i}`}>
+            <span class="n mono">{String(i + 1).padStart(2, '0')}</span>
+            <span class="t">{k.label}</span>
+            {k.id === 'camiseta' && <span class="d" data-shirt>{shirt.text}</span>}
+            {k.detail && <span class="d">{k.detail}</span>}
+          </li>
+        ))}
+      </ul>
+      <figure class="ph reveal">
+        <img src="/img/fotos/roxo-800.webp" srcset="/img/fotos/roxo-480.webp 480w, /img/fotos/roxo-800.webp 800w, /img/fotos/roxo-1600.webp 1600w" sizes="(min-width: 820px) 34vw, 100vw" width={f.sizes['800'].w} height={f.sizes['800'].h} alt={f.alt} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </div>
+</section>
+<style>
+  .grid { display: grid; gap: 24px; }
+  .items { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .it { display: grid; grid-template-columns: 40px 1fr; gap: 4px 12px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--color-sand); transition-delay: calc(var(--i) * 60ms); }
+  .n { color: var(--accent); font-weight: 600; font-size: 14px; padding-top: 4px; }
+  .t { font-weight: 600; font-size: 18px; }
+  .d { grid-column: 2; font-size: 15px; color: var(--fg2); }
+  .hi { background: var(--color-aqua); color: var(--color-navy); border-color: var(--accent); }
+  .hi .n, .hi .d { color: var(--color-navy); }
+  .hi .t { font-size: 22px; font-weight: 800; }
+  .ph { margin: 0; border-radius: 16px; overflow: hidden; aspect-ratio: 4 / 5; border: 1px solid var(--line); }
+  .ph img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; }
+  @media (min-width: 820px) { .grid { grid-template-columns: 1.4fr 1fr; align-items: start; } .items { grid-template-columns: 1fr 1fr; } .hi { grid-column: 1 / -1; } }
+</style>

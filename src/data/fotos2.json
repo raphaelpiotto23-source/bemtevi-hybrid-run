@@ -1,0 +1,216 @@
+{
+ "fachada": {
+  "alt": "Fachada do Bem Te Vi ao entardecer, com o letreiro 'seu lugar de pouso'",
+  "src": "WhatsApp Image 2026-10-07 at 10.52.33.jpeg",
+  "sizes": {
+   "1600": {
+    "w": 1313,
+    "h": 1600,
+    "kb": 105
+   },
+   "800": {
+    "w": 800,
+    "h": 975,
+    "kb": 57
+   },
+   "480": {
+    "w": 480,
+    "h": 585,
+    "kb": 29
+   }
+  }
+ },
+ "placa": {
+  "alt": "Placa da Confraria Bem Te Vi contra o céu do fim de tarde",
+  "src": "WhatsApp Image 2026-10-07 at 10.52.40.jpeg",
+  "sizes": {
+   "1600": {
+    "w": 1320,
+    "h": 1486,
+    "kb": 60
+   },
+   "800": {
+    "w": 800,
+    "h": 901,
+    "kb": 33
+   },
+   "480": {
+    "w": 480,
+    "h": 540,
+    "kb": 18
+   }
+  }
+ },
+ "equipe": {
+  "alt": "Grupo de corredores com número de peito numa rua de São João da Boa Vista",
+  "src": "WhatsApp Image 2026-10-07 at 11.22.12.jpeg",
+  "sizes": {
+   "1600": {
+    "w": 1320,
+    "h": 1492,
+    "kb": 188
+   },
+   "800": {
+    "w": 800,
+    "h": 904,
+    "kb": 100
+   },
+   "480": {
+    "w": 480,
+    "h": 543,
+    "kb": 50
+   }
+  }
+ },
+ "mesa": {
+  "alt": "Amigos à mesa no Bem Te Vi, à noite",
+  "src": "Downloads/btv_00.jpg",
+  "sizes": {
+   "1600": {
+    "w": 1600,
+    "h": 1878,
+    "kb": 226
+   },
+   "800": {
+    "w": 800,
+    "h": 939,
+    "kb": 92
+   },
+   "480": {
+    "w": 480,
+    "h": 563,
+    "kb": 44
+   }
+  }
+ },
+ "noite": {
+  "alt": "Corredor em prova noturna",
+  "src": "rhayla_spcity_lt1_0655.jpg.jpeg",
+  "sizes": {
+   "1600": {
+    "w": 1600,
+    "h": 2400,
+    "kb": 149
+   },
+   "800": {
+    "w": 800,
+    "h": 1200,
+    "kb": 35
+   },
+   "480": {
+    "w": 480,
+    "h": 720,
+    "kb": 16
+   }
+  }
+ },
+ "dia": {
+  "alt": "Placa da Confraria Bem Te Vi de dia, céu azul, árvores da avenida",
+  "src": "02_Campanha/Corrida_assets/WhatsApp Image 2026-10-07 at 11.02.59.jpeg",
+  "sizes": {
+   "1600": {
+    "w": 874,
+    "h": 736,
+    "kb": 108
+   },
+   "800": {
+    "w": 800,
+    "h": 674,
+    "kb": 99
+   },
+   "480": {
+    "w": 480,
+    "h": 404,
+    "kb": 48
+   }
+  },
+  "mobile": {
+   "w": 640,
+   "h": 803
+  }
+ },
+ "avenida": {
+  "alt": "Av. Dr. Durval Nicolau de manhã, canteiro arborizado e céu azul",
+  "src": "WhatsApp Image 2026-10-07 at 11.03.50.jpeg",
+  "sizes": {
+   "1600": {
+    "w": 1228,
+    "h": 800,
+    "kb": 122
+   },
+   "800": {
+    "w": 800,
+    "h": 521,
+    "kb": 74
+   },
+   "480": {
+    "w": 480,
+    "h": 313,
+    "kb": 32
+   }
+  }
+ },
+ "verde": {
+  "alt": "Corredor sorrindo de braços abertos numa prova de rua, céu azul",
+  "src": "WhatsApp Image 2026-10-07 at 11.21.19.jpeg",
+  "sizes": {
+   "1600": {
+    "w": 1320,
+    "h": 1256,
+    "kb": 150
+   },
+   "800": {
+    "w": 800,
+    "h": 761,
+    "kb": 67
+   },
+   "480": {
+    "w": 480,
+    "h": 457,
+    "kb": 27
+   }
+  }
+ },
+ "roxo": {
+  "alt": "Corredor com número de peito numa rua de São João da Boa Vista, de dia",
+  "src": "WhatsApp Image 2026-10-07 at 11.14.58.jpeg",
+  "sizes": {
+   "1600": {
+    "w": 1024,
+    "h": 1280,
+    "kb": 72
+   },
+   "800": {
+    "w": 800,
+    "h": 1000,
+    "kb": 49
+   },
+   "480": {
+    "w": 480,
+    "h": 600,
+    "kb": 23
+   }
+  }
+ },
+ "placa_dia": {
+  "alt": "Placa da Confraria Bem Te Vi sob o céu azul de manhã",
+  "src": "WhatsApp Image 2026-10-07 at 11.02.59.jpeg",
+  "sizes": {
+   "1600": {
+    "w": 984,
+    "h": 832,
+    "kb": 153
+   },
+   "800": {
+    "w": 800,
+    "h": 676,
+    "kb": 116
+   },
+   "480": {
+    "w": 480,
+    "h": 406,
+    "kb": 55
+   }
+  }
+ }
+}
