@@ -20,7 +20,7 @@ const cards = event.distances.map((d) => ({ d, p: priceFor(event, st, d.id) }));
         <span class="sw" aria-hidden="true"></span>
         <span>Sou 60+ ou PCD <small>(50% de desconto)</small></span>
       </label>
-      <p class="label" data-lote-label>{st.kind === 'lote' ? `Preço do ${st.lote.label}` : st.kind === 'encerrado' ? 'Inscrições encerradas' : cards[0].p.label}</p>
+      <p class="label" data-lote-label>{st.kind === 'lote' ? (st.lote.priceLabel ?? `Preço do ${st.lote.label}`) : st.kind === 'encerrado' ? 'Inscrições encerradas' : cards[0].p.label}</p>
     </div>
 
     <div class="cards">

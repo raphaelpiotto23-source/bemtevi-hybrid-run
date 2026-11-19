@@ -3,12 +3,12 @@
   "edition": "1ª edição",
   "circuit": "Etapa de abertura do Circuito Hybrid",
   "tagline": "A única corrida da região onde a linha de chegada é a mesa.",
-  "support": "Prova comum dispersa em 40 minutos. Aqui o público fica horas no mesmo lugar: o pouso na porta do Bem Te Vi, com café, chopp, música e família. E o domingo não acaba ao meio-dia: à tarde tem festa de confraternização, abrindo a temporada de festas de dezembro.",
+  "support": "Prova comum dispersa em 40 minutos. Aqui o público fica horas no mesmo lugar: o pouso na porta do Bem Te Vi, com café, chopp, música e família. E o domingo não acaba ao meio-dia: à tarde tem festa de confraternização.",
   "signature": "Feita para atletas híbridos: quem treina tendo trabalho e vida, e se constrói no processo, não na chegada.",
   "hashtag": "",
   "siteUrl": "https://thehybriderun.com.br/bemtevi",
-  "raceStart": "2026-11-29T07:30:00-03:00",
-  "raceEnd": "2026-11-29T18:00:00-03:00",
+  "raceStart": "2027-01-17T07:30:00-03:00",
+  "raceEnd": "2027-01-17T18:00:00-03:00",
   "venue": {
     "name": "Bem Te Vi",
     "address": "Av. Dr. Durval Nicolau, 1705",
@@ -26,46 +26,16 @@
   "lotes": [
     {
       "id": 1,
-      "label": "1º lote",
-      "until": "2026-10-18T23:59:59-03:00",
+      "label": "Valor único",
+      "until": "2027-01-11T23:59:59-03:00",
       "prices": {
-        "10k": 159,
-        "5k": 149,
-        "walk": 119
+        "10k": 130,
+        "5k": 130,
+        "walk": 130
       },
-      "note": "até 18/10 ou 120 inscrições"
-    },
-    {
-      "id": 2,
-      "label": "2º lote",
-      "until": "2026-11-08T23:59:59-03:00",
-      "prices": {
-        "10k": 179,
-        "5k": 169,
-        "walk": 129
-      }
-    },
-    {
-      "id": 3,
-      "label": "3º lote",
-      "until": "2026-11-23T23:59:59-03:00",
-      "prices": {
-        "10k": 199,
-        "5k": 189,
-        "walk": 139
-      }
-    },
-    {
-      "id": 4,
-      "label": "Balcão",
-      "from": "2026-11-27T14:00:00-03:00",
-      "until": "2026-11-28T18:00:00-03:00",
-      "prices": {
-        "10k": 209,
-        "5k": 199,
-        "walk": 149
-      },
-      "note": "Sem camiseta, enquanto houver vaga"
+      "note": "mesmo valor para 10 km, 5 km e caminhada",
+      "badge": "NOVA DATA 17.01.2027 · INSCRIÇÕES ABERTAS",
+      "priceLabel": "Valor único para todas as distâncias"
     }
   ],
   "feeNote": "Valores + 12% de taxa da plataforma",
@@ -76,8 +46,8 @@
   "groups": {
     "note": "Grupos esportivos: mesmos preços, taxa fixa de R$ 6,50. Caminhada do grupo: R$ 119."
   },
-  "onlineUntil": "2026-11-23T23:59:59-03:00",
-  "boletoUntil": "2026-11-19T23:59:59-03:00",
+  "onlineUntil": "2027-01-11T23:59:59-03:00",
+  "boletoUntil": "2027-01-07T23:59:59-03:00",
   "shirtSizeUntil": "2026-10-30T23:59:59-03:00",
   "transferUntil": "2026-10-30T23:59:59-03:00",
   "couponNote": "Tem cupom de um parceiro? Usa no checkout da Ticket Sports.",
@@ -236,7 +206,7 @@
     {
       "time": "Tarde",
       "label": "Festa de confraternização",
-      "detail": "Abre a temporada de festas de dezembro"
+      "detail": "Domingo inteiro no Bem Te Vi"
     }
   ],
   "kit": [
@@ -283,19 +253,19 @@
   ],
   "kitPickup": [
     {
-      "day": "2026-11-27",
+      "day": "2027-01-15",
       "weekday": "sexta",
       "from": "14:00",
       "to": "21:00"
     },
     {
-      "day": "2026-11-28",
+      "day": "2027-01-16",
       "weekday": "sábado",
       "from": "10:00",
       "to": "18:00"
     }
   ],
-  "kitPickupRaceDay": "Quem é de fora retira no dia, das 06h00 às 07h00, com pedido até 22/11.",
+  "kitPickupRaceDay": "Quem é de fora retira no dia, das 06h00 às 07h00, com pedido até 10/01.",
   "sponsors": [
     {
       "name": "Gonçalves Imóveis",
@@ -388,6 +358,10 @@
   "sponsorPitch": "Sua marca na porta da Confraria Bem Te Vi, na frente dos corredores e das famílias que ficam o domingo inteiro.",
   "faq": [
     {
+      "q": "A data mudou?",
+      "a": "Sim. A prova passou de 29/11/2026 para 17/01/2027, aguardando o Permit da Federação Paulista de Atletismo, que libera o alvará e o seguro. Mesmo local, mesmo horário. Sua inscrição já vale para a nova data, sem precisar fazer nada."
+    },
+    {
       "q": "Qual a idade mínima?",
       "a": "Corrida 10 km: 16 anos. Corrida 5 km: 12 anos. Caminhada 3 km: idade livre. Menores participam com autorização do responsável."
     },
@@ -397,15 +371,15 @@
     },
     {
       "q": "Posso transferir minha inscrição?",
-      "a": "Sim, até 30/10, pela Ticket Sports. Depois dessa data a inscrição é pessoal e intransferível."
+      "a": "Fale com a organização pelo WhatsApp. Quem já está inscrito continua inscrito para 17/01, sem fazer nada."
     },
     {
       "q": "Meu tamanho de camiseta é garantido?",
-      "a": "Inscrições feitas até 30/10 têm o tamanho garantido. Depois disso a camiseta fica sujeita à grade disponível."
+      "a": "A camiseta fica sujeita à grade disponível no momento da inscrição."
     },
     {
       "q": "Sou de fora. Posso retirar o kit no dia?",
-      "a": "Pode, das 06h00 às 07h00 no Bem Te Vi, com pedido feito até 22/11 pelo WhatsApp da organização."
+      "a": "Pode, das 06h00 às 07h00 no Bem Te Vi, com pedido feito até 10/01 pelo WhatsApp da organização."
     },
     {
       "q": "Tenho cupom de um parceiro. Onde uso?",
@@ -465,7 +439,7 @@
     ],
     "cta": "Quero ser capitão",
     "who": "Vale para grupos de São João da Boa Vista e região",
-    "whatsappText": "Olá! Quero ser capitão do bando na Bem Te Vi Hybrid Run, 29/11. Meu grupo: "
+    "whatsappText": "Olá! Quero ser capitão do bando na Bem Te Vi Hybrid Run, 17/01. Meu grupo: "
   },
   "training": {
     "eyebrow": "Treinão de sábado",
@@ -474,7 +448,7 @@
     "firstLabel": "Primeiro encontro",
     "firstDate": "17.10",
     "time": "08h30",
-    "where": "Na porta do Bem Te Vi, Av. Dr. Durval Nicolau, 1705. Depois, todo sábado até 29/11.",
+    "where": "Na porta do Bem Te Vi, Av. Dr. Durval Nicolau, 1705. Todo sábado até a prova, em 17/01.",
     "facts": [
       {
         "title": "3 km, ritmo de bando",
@@ -482,7 +456,7 @@
       },
       {
         "title": "Vai subindo",
-        "detail": "3, 3, 5, 5, 7, 7 km. Os 10 km só no dia 29."
+        "detail": "3, 3, 5, 5, 7, 7 km. Os 10 km só no dia 17/01."
       },
       {
         "title": "O treino acaba na mesa",
@@ -500,7 +474,7 @@
   "ideia": {
     "eyebrow": "Como funciona",
     "title": "Corre de manhã, pousa na mesa, fica o domingo inteiro.",
-    "lede": "Largada às 07h30 para os 10 km e 5 km, caminhada às 08h30. Todo mundo chega no mesmo lugar: a arena na porta da Confraria Bem Te Vi, com o pouso aberto desde cedo. Premiação, brinde do bando e, à tarde, a festa que abre a temporada de dezembro."
+    "lede": "Largada às 07h30 para os 10 km e 5 km, caminhada às 08h30. Todo mundo chega no mesmo lugar: a arena na porta da Confraria Bem Te Vi, com o pouso aberto desde cedo. Premiação, brinde do bando e, à tarde, a festa de confraternização."
   },
   "heroLede": "Corrida de 10 km, 5 km e caminhada de 3 km pela Av. Dr. Durval Nicolau, com largada e chegada na porta da Confraria Bem Te Vi. Chip, medalha, camiseta técnica e ficha de pouso. Você termina a prova e a mesa já está posta: café, chopp, música e a família esperando."
 }

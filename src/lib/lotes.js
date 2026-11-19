@@ -56,6 +56,7 @@ export function loteState(event, now) {
 
 // Selo do hero. urgent = faltando 3 dias ou menos para virar o lote.
 export function badge(state) {
+  if (state.kind === 'lote' && state.lote.badge) return { text: state.lote.badge, urgent: false };
   if (state.kind === 'lote') {
     const n = daysLeft(state.msLeft);
     const label = state.lote.label.toUpperCase();
@@ -75,7 +76,7 @@ export function priceFor(event, state, distId, half = false) {
   if (!lote) return { current: null, next: null, label: 'Inscrições encerradas' };
   const current = lote.prices[distId] * f;
   const next = state.next ? { label: state.next.label, price: state.next.prices[distId] * f } : null;
-  const label = state.kind === 'fechado' ? 'No balcão, 27 e 28/11' : state.kind === 'balcao' ? 'Balcão, enquanto houver vaga' : lote.label;
+  const label = state.kind === 'fechado' ? 'No balcão, na retirada do kit' : state.kind === 'balcao' ? 'Balcão, enquanto houver vaga' : lote.label;
   return { current, next, label };
 }
 

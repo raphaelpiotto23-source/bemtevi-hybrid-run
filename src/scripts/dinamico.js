@@ -51,7 +51,7 @@ function renderLote() {
     else next.hidden = true;
   });
   const lab = $('[data-lote-label]');
-  if (lab) lab.textContent = st.kind === 'lote' ? `Preço do ${st.lote.label}${half ? ', com 50% de desconto' : ''}` : st.kind === 'encerrado' ? 'Inscrições encerradas' : priceFor(event, st, '5k').label;
+  if (lab) lab.textContent = st.kind === 'lote' ? `${st.lote.priceLabel ?? 'Preço do ' + st.lote.label}${half ? ', com 50% de desconto' : ''}` : st.kind === 'encerrado' ? 'Inscrições encerradas' : priceFor(event, st, '5k').label;
   const sp = priceFor(event, st, '5k');
   const sl = $('[data-sticky-label]'), spr = $('[data-sticky-price]');
   if (sl) sl.textContent = st.kind === 'lote' ? st.lote.label : sp.label;
