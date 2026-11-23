@@ -399,7 +399,7 @@
     },
     {
       "q": "Onde estaciono?",
-      "a": "[PREENCHER: estacionamento e acesso, definir com o Bem Te Vi]"
+      "a": "Nas ruas do entorno do Bem Te Vi. Chegue com antecedência: parte da avenida fica interditada durante a prova."
     }
   ],
   "regulationUrl": "TODO",
@@ -445,18 +445,18 @@
     "eyebrow": "Treinão de sábado",
     "title": "Todo sábado tem treino. E tem chegada.",
     "lede": "Treino de corrida saindo do Bem Te Vi e terminando no Bem Te Vi. Aberto, de graça, para qualquer ritmo. Não precisa estar inscrito na prova para ir.",
-    "firstLabel": "Primeiro encontro",
-    "firstDate": "17.10",
+    "firstLabel": "Todo sábado",
+    "firstDate": "até 16.01",
     "time": "08h30",
     "where": "Na porta do Bem Te Vi, Av. Dr. Durval Nicolau, 1705. Todo sábado até a prova, em 17/01.",
     "facts": [
       {
-        "title": "3 km, ritmo de bando",
+        "title": "Ritmo de bando",
         "detail": "Quem quer puxar, puxa. Quem quer trotar, trota. Ninguém fica para trás."
       },
       {
         "title": "Vai subindo",
-        "detail": "3, 3, 5, 5, 7, 7 km. Os 10 km só no dia 17/01."
+        "detail": "A distância cresce semana a semana até a prova. Os 10 km só no dia 17/01."
       },
       {
         "title": "O treino acaba na mesa",
